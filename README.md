@@ -120,4 +120,3 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     </script>
 </body>
 </html>
-
