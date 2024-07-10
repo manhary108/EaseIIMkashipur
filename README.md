@@ -8,20 +8,20 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     <title>Travel and Hospitality Preferences</title>
     <style>
         body {
-            background-image: url('IIM.jpg'); /* Replace with your image URL */
+            background-image: url('https://raw.githubusercontent.com/username/repository/main/images/iim_campus.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
-            color: #fff; /* Optional: Adjust text color for better contrast */
         }
         .container {
-            background: rgba(255, 255, 255, 0.8); /* Adjust background opacity if needed */
+            background-color: rgba(173, 216, 230, 0.8); /* Light blue background color with opacity */
             padding: 20px;
             border-radius: 10px;
             max-width: 600px;
             margin: 0 auto;
+            color: #000; /* Black text color */
         }
         input, select {
             margin: 10px 0;
@@ -83,12 +83,15 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             </div>
             <p>Total Cost: <span id="totalCost">0</span> INR</p>
             <button type="button" onclick="calculateCost()">Calculate Cost</button>
-            <button type="button" onclick="generateQRCode()">Generate QR Code</button>
         </form>
-        <div id="qrCodeContainer"></div>
+        <div class="upi-id">
+            <h3>Make Payment</h3>
+            <p>Scan QR Code or use UPI ID:</p>
+            <p><strong>Your UPI ID:</strong> 9993069529@pz</p>
+            <img src="https://raw.githubusercontent.com/username/repository/main/images/qr_code.png" alt="QR Code" width="200">
+        </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
         const costMatrix = {
             'YES,YES,Single,YES': 11453,
@@ -112,15 +115,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             const totalCost = costMatrix[key] || 0;
             document.getElementById('totalCost').innerText = totalCost;
         }
-
-        function generateQRCode() {
-            const totalCost = document.getElementById('totalCost').innerText;
-            const qr = new QRious({
-                element: document.getElementById('qrCodeContainer'),
-                value: `upi://pay?pa=9993069529@PZ&pn=Manish Choudhary&am=${totalCost}&cu=INR`,
-                size: 200
-            });
-        }
     </script>
 </body>
 </html>
+
