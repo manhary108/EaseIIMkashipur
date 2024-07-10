@@ -8,12 +8,13 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     <title>Travel and Hospitality Preferences</title>
     <style>
         body {
-            background-image: url('IIM.jpg'); /* Replace with your image URL */
+            background-image: url('https://raw.githubusercontent.com/username/repository/main/images/iim_campus.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            color: #fff; /* Optional: Adjust text color for better contrast */
         }
         .container {
             background: rgba(255, 255, 255, 0.8); /* Adjust background opacity if needed */
@@ -49,71 +50,24 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
 </head>
 <body>
     <div class="container">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel and Hospitality Preferences</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        input, select {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .qr-code {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
         <h1>Travel and Hospitality Preferences</h1>
         <form id="preferencesForm">
             <div>
-                <label for="transferFromDelhi">AC Bus Transfer from Delhi to Kashipur on 13 October</label>
-                <select id="transferFromDelhi">
+                <label>AC Bus Transfer from Delhi to Kashipur on 13 October</label>
+                <select id="transferToKashipur">
                     <option value="YES">YES</option>
                     <option value="NO">NO</option>
                 </select>
             </div>
             <div>
-                <label for="hotelTransfers">Hotel to IIM Campus and back to Hotel Transfers</label>
+                <label>Hotel to IIM Campus and back to Hotel Transfers</label>
                 <select id="hotelTransfers">
                     <option value="YES">YES</option>
                     <option value="NO">NO</option>
                 </select>
             </div>
             <div>
-                <label for="accommodation">Accommodation Preference</label>
+                <label>Accommodation Preference</label>
                 <select id="accommodation">
                     <option value="Single">Single</option>
                     <option value="Double">Double</option>
@@ -121,7 +75,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
                 </select>
             </div>
             <div>
-                <label for="transferToDelhi">AC Bus transfer from Kashipur to Delhi on 16 October</label>
+                <label>AC Bus transfer from Kashipur to Delhi on 16 October</label>
                 <select id="transferToDelhi">
                     <option value="YES">YES</option>
                     <option value="NO">NO</option>
@@ -129,9 +83,9 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             </div>
             <p>Total Cost: <span id="totalCost">0</span> INR</p>
             <button type="button" onclick="calculateCost()">Calculate Cost</button>
-            <button type="button" onclick="submitPreferences()">Done</button>
+            <button type="button" onclick="generateQRCode()">Generate QR Code</button>
         </form>
-        <div class="qr-code" id="qrCodeContainer"></div>
+        <div id="qrCodeContainer"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
@@ -149,61 +103,24 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
         };
 
         function calculateCost() {
-            const transferFromDelhi = document.getElementById('transferFromDelhi').value;
+            const transferToKashipur = document.getElementById('transferToKashipur').value;
             const hotelTransfers = document.getElementById('hotelTransfers').value;
             const accommodation = document.getElementById('accommodation').value;
             const transferToDelhi = document.getElementById('transferToDelhi').value;
 
-            const key = `${transferFromDelhi},${hotelTransfers},${accommodation},${transferToDelhi}`;
+            const key = `${transferToKashipur},${hotelTransfers},${accommodation},${transferToDelhi}`;
             const totalCost = costMatrix[key] || 0;
-            document.getElementById('totalCost').textContent = totalCost;
+            document.getElementById('totalCost').innerText = totalCost;
         }
 
-        function submitPreferences() {
-            const transferFromDelhi = document.getElementById('transferFromDelhi').value;
-            const hotelTransfers = document.getElementById('hotelTransfers').value;
-            const accommodation = document.getElementById('accommodation').value;
-            const transferToDelhi = document.getElementById('transferToDelhi').value;
-            const totalCost = document.getElementById('totalCost').textContent;
-
-            // Replace with your Google Forms endpoint
-            const googleFormsEndpoint = '[https://docs.google.com/forms/d/e/1KljRZbBN48Y3tcbmHuIy0khzcMlkkFaXDl7RHeeX0Vw/formResponse](https://script.google.com/macros/s/AKfycbxKpAnecRugHybQaIpx2Uh6xBfHhdPuMeXbdWtCxCgNP723J9hZa7iPz5uluZmlOhmV/exec)';
-
-            // Data to send to Google Forms
-            const formData = new FormData();
-            formData.append('entry.1234567890', transferFromDelhi);
-            formData.append('entry.1234567891', hotelTransfers);
-            formData.append('entry.1234567892', accommodation);
-            formData.append('entry.1234567893', transferToDelhi);
-            formData.append('entry.1234567894', totalCost);
-
-            fetch(googleFormsEndpoint, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
-                alert('Preferences submitted successfully!');
-                generateQRCode(totalCost);
-            })
-            .catch(error => console.error('Error submitting preferences:', error));
-        }
-
-        function generateQRCode(amount) {
+        function generateQRCode() {
+            const totalCost = document.getElementById('totalCost').innerText;
             const qr = new QRious({
                 element: document.getElementById('qrCodeContainer'),
-                value: `upi://pay?pa=9993069529@pz&pn=Manish Choudhary&am=${amount}&cu=INR`,
+                value: `upi://pay?pa=9993069529@PZ&pn=Manish Choudhary&am=${totalCost}&cu=INR`,
                 size: 200
             });
         }
-    </script>
-</body>
-</html>
- </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script>
-        // Your JavaScript functions remain unchanged
     </script>
 </body>
 </html>
