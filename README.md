@@ -16,7 +16,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             padding: 20px;
         }
         .container {
-            background-color: rgba(173, 216, 230, 0.8); /* Light blue background color with opacity */
+            background-color: rgba(240, 240, 240, 0.9); /* Light grey background color with opacity */
             padding: 20px;
             border-radius: 10px;
             max-width: 600px;
@@ -43,8 +43,12 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
         button:hover {
             background-color: #0056b3;
         }
-        .qr-code {
+        .upi-id {
             margin-top: 20px;
+            text-align: center;
+        }
+        .upi-id p {
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -86,9 +90,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
         </form>
         <div class="upi-id">
             <h3>Make Payment</h3>
-            <p>Scan QR Code or use UPI ID:</p>
-            <p><strong>Your UPI ID:</strong> 9993069529@pz</p>
-            <img src="https://raw.githubusercontent.com/username/repository/main/images/qr_code.png" alt="QR Code" width="200">
+            <p>UPI ID: 9993069529@pz</p>
         </div>
     </div>
 
