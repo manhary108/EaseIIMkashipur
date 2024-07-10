@@ -8,6 +8,55 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     <title>Travel and Hospitality Preferences</title>
     <style>
         body {
+            background-image: url('IIM.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Adjust background opacity if needed */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, select {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel and Hospitality Preferences</title>
+    <style>
+        body {
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -147,6 +196,14 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
                 size: 200
             });
         }
+    </script>
+</body>
+</html>
+ </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        // Your JavaScript functions remain unchanged
     </script>
 </body>
 </html>
