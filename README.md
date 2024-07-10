@@ -8,7 +8,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     <title>Travel and Hospitality Preferences</title>
     <style>
         body {
-            background-image: url('https://raw.githubusercontent.com/username/repository/main/images/iim_campus.jpg'); /* Replace with your image URL */
+            background-image: url('IIM.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
