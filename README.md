@@ -1,5 +1,4 @@
 # EaseIIMkashipur
-Find comfort and convenience with KashiStay. Your ideal platform for booking accommodation and transfers for a memorable 3-day visit to IIM Kashipur, Uttarakhand
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
     <title>Travel and Hospitality Preferences</title>
     <style>
         body {
-            background-image: url('IIM.jpg');
+            background-image: url('https://raw.githubusercontent.com/username/repository/main/images/iim_campus.jpg'); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
@@ -16,7 +15,7 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             padding: 20px;
         }
         .container {
-            background-color: rgba(240, 240, 240, 0.9);
+            background-color: rgba(240, 240, 240, 0.9); /* Light grey background color with opacity */
             padding: 20px;
             border-radius: 10px;
             max-width: 600px;
@@ -49,6 +48,10 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
         }
         .upi-id p {
             margin: 10px 0;
+        }
+        .note {
+            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -85,12 +88,19 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
                     <option value="NO">NO</option>
                 </select>
             </div>
+            <div>
+                <label>Polo T-shirt (386 INR each)</label>
+                <input type="number" id="poloTshirtQuantity" value="0" min="0">
+            </div>
             <p>Total Cost: <span id="totalCost">0</span> INR</p>
+            <div class="note">
+                <p>Note: The prices listed above do not include the cost of T-shirts. The cost of T-shirts is ₹386 per piece.</p>
+            </div>
             <button type="button" onclick="calculateCost()">Calculate Cost</button>
         </form>
         <div class="upi-id">
             <h3>Make Payment</h3>
-            <p>UPI ID: 9993069529@pz</p>
+            <p>UPI ID: 9993069529@PZ</p>
         </div>
     </div>
 
@@ -112,9 +122,12 @@ Find comfort and convenience with KashiStay. Your ideal platform for booking acc
             const hotelTransfers = document.getElementById('hotelTransfers').value;
             const accommodation = document.getElementById('accommodation').value;
             const transferToDelhi = document.getElementById('transferToDelhi').value;
+            const poloTshirtQuantity = parseInt(document.getElementById('poloTshirtQuantity').value) || 0;
 
             const key = `${transferToKashipur},${hotelTransfers},${accommodation},${transferToDelhi}`;
-            const totalCost = costMatrix[key] || 0;
+            let totalCost = costMatrix[key] || 0;
+            totalCost += poloTshirtQuantity * 386;
+
             document.getElementById('totalCost').innerText = totalCost;
         }
     </script>
