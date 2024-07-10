@@ -1,4 +1,5 @@
 # EaseIIMkashipur
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -89,7 +90,7 @@
         </form>
         <div class="upi-id">
             <h3>Make Payment</h3>
-            <p>UPI ID: 9993069529@pz</p>
+            <p>UPI ID: 9993069529@pz@upi</p>
         </div>
     </div>
 
@@ -122,4 +123,3 @@
     </script>
 </body>
 </html>
-
