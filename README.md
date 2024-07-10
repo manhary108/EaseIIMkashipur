@@ -1,5 +1,4 @@
 # EaseIIMkashipur
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,13 +45,6 @@
             margin-top: 20px;
             text-align: center;
         }
-        .upi-id p {
-            margin: 10px 0;
-        }
-        .note {
-            text-align: left;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -93,14 +85,11 @@
                 <input type="number" id="poloTshirtQuantity" value="0" min="0">
             </div>
             <p>Total Cost: <span id="totalCost">0</span> INR</p>
-            <div class="note">
-                <p>Note: The prices listed above do not include the cost of T-shirts. The cost of T-shirts is ₹386 per piece.</p>
-            </div>
             <button type="button" onclick="calculateCost()">Calculate Cost</button>
         </form>
         <div class="upi-id">
             <h3>Make Payment</h3>
-            <p>UPI ID: 9993069529@PZ</p>
+            <p>UPI ID: 9993069529@pz</p>
         </div>
     </div>
 
@@ -133,3 +122,4 @@
     </script>
 </body>
 </html>
+
